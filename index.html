@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Fields!</title>
+    <script type="module" crossorigin src="/assets/index-m-277Gzc.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BAyQdiEz.css">
+  </head>
+  <body>
+    <!-- Search input at the top -->
+    <div class="search-container">
+      <input id="search-input" type="text" placeholder="Enter coordinates (lat lon) e.g., 55.576662 13.283111">
+      <button id="clear-history" type="button" title="Clear search history">🗑️</button>
+    </div>
+
+    <div id="map" class="map"></div>
+
+    <div class="controls-container">
+      <div class="slider-controls">
+        <div class="control-item">
+          <div class="control-header">
+            <label for="epsilon">Epsilon = </label>
+            <span id="epsilon-value">0.011</span>
+          </div>
+          <input id="epsilon" type="range" min="0.001" max="0.03" step="0.001" value="0.011">
+        </div>
+        <div class="control-item">
+          <div class="control-header">
+            <label for="min-cluster-size">Min Points = </label>
+            <span id="min-cluster-size-value">2</span>
+          </div>
+          <input id="min-cluster-size" type="range" min="1" max="20" step="1" value="2">
+        </div>
+        <div class="control-item">
+          <div class="control-header">
+            <label for="coord-weight">Coordinate Weight = </label>
+            <span id="coord-weight-value">1.4</span>
+          </div>
+          <input id="coord-weight" type="range" min="0" max="2" step="0.1" value="1.4">
+        </div>
+        <div class="control-item">
+          <div class="control-header">
+            <label for="constraint-strength">Constraint Strength = </label>
+            <span id="constraint-strength-value">0.5</span>
+          </div>
+          <input id="constraint-strength" type="range" min="0.1" max="5.0" step="0.1" value="2">
+        </div>
+      </div>
+      <div class="button-controls">
+        <button id="toggle-raster" type="button" class="control-button">Hide Raster</button>
+        <button id="reset-config" type="button" class="control-button" title="Reset to default configuration">Reset to defaults</button>
+        <div class="drawing-controls">
+          <button id="circle-tool" type="button" class="control-button drawing-button" title="Draw circles for must-link constraints">Circle Tool</button>
+          <button id="line-tool" type="button" class="control-button drawing-button" title="Draw lines for boundary constraints">Line Tool</button>
+          <button id="disable-drawing" type="button" class="control-button drawing-button" title="Disable drawing tools">Disable Drawing</button>
+          <button id="clear-constraints" type="button" class="control-button constraint-button" title="Clear all constraints and annotations">Clear All</button>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
